@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3d334fd4a.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/note-icon.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <div class="wrapper">
+        <div class="note-app">
+            <div class="note-app__menu">
+                <h1 class="note-app__menu-title"><i class="fa-regular fa-note-sticky"></i> NoteApp</h1>
+                <div class="note-app__menu-buttons">
+                    <button class="note-app__menu-buttons-add icon"><i class="fas fa-plus"></i></button>
+                    <button class="note-app__menu-buttons-deleteall icon"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="note-app__area"></div>
+
+            <div class="note-app__panel">
+                <h2 class="note-app__panel-title">Add note</h2>
+                <label for="category">Choose category</label>
+                <select id="category">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <label for="text">Add text</label>
+                <textarea id="text"></textarea>
+                <p class="note-app__panel-error">Check the fields!</p>
+                <div class="note-app__panel-buttons">
+                    <button class="note-app__panel-buttons-save">Save</button>
+                    <button class="note-app__panel-buttons-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
