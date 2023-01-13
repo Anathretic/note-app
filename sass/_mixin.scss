@@ -1,0 +1,9 @@
+@use 'colors';
+
+@mixin allBtns {
+	padding: 0.8em;
+	border: 1px solid colors.$border-color;
+	border-radius: 8px;
+	transition: background-color 0.3s, color 0.3s;
+	cursor: pointer;
+}

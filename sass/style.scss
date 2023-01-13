@@ -1,18 +1,76 @@
+@use 'colors';
+@use 'mixin';
+
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(243, 243, 243);
+	font-family: 'Montserrat', sans-serif;
+	background-color: colors.$main-color;
+	color: colors.$second-color;
 }
 
 .wrapper {
-    margin: 0 auto;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.nav {
+    position: fixed;
     width: 100%;
-    max-width: 1200px;
+    background-color: colors.$main-color;
+    border-bottom: 1px solid colors.$border-color;
+
+    &__wrapper {
+		position: relative;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1600px;
+	}
+
+    &__menu {
+        display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em;
+		height: 100px;
+
+        &-title {
+			font-size: 2.6em;
+			font-weight: 300;
+			padding: 0.25em;
+		}
+
+		&-buttons {
+			padding: 0.5em;
+			background: none;
+
+			&-add,
+			&-deleteall {
+				@include mixin.allBtns;
+                font-size: 1.4em;
+			}
+
+			&-add:hover,
+			&-deleteall:hover {
+				background-color: colors.$second-color;
+				color: colors.$main-color;
+			}
+
+			&-add {
+				margin-right: 1em;
+			}
+		}
+    }
 }
