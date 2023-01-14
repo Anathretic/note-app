@@ -27,26 +27,25 @@ body {
 }
 
 .nav {
-    position: fixed;
-    width: 100%;
-    background-color: colors.$main-color;
-    border-bottom: 1px solid colors.$border-color;
+	width: 100%;
+	background-color: colors.$main-color;
+	border-bottom: 1px solid colors.$border-color;
 
-    &__wrapper {
+	&__wrapper {
 		position: relative;
 		margin: 0 auto;
 		width: 100%;
 		max-width: 1600px;
 	}
 
-    &__menu {
-        display: flex;
+	&__menu {
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1em;
 		height: 100px;
 
-        &-title {
+		&-title {
 			font-size: 2.6em;
 			font-weight: 300;
 			padding: 0.25em;
@@ -59,7 +58,7 @@ body {
 			&-add,
 			&-deleteall {
 				@include mixin.allBtns;
-                font-size: 1.4em;
+				font-size: 1.4em;
 			}
 
 			&-add:hover,
@@ -72,5 +71,49 @@ body {
 				margin-right: 1em;
 			}
 		}
-    }
+	}
+}
+
+.note-area {
+	display: flex;
+	align-items: start;
+	flex-wrap: wrap;
+	padding: 2em;
+}
+
+.notecard {
+	height: 100%;
+	min-height: 200px;
+	max-height: 400px;
+	width: 100%;
+	margin: 0 0 3em 0;
+	background-color: yellow;
+	border-radius: 8px;
+	border: 1px solid colors.$border-color;
+	overflow-y: scroll;
+
+	&__header,
+	&__icon {
+		font-size: 1.4em;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2em;
+		background-color: rgba(0, 0, 0, 0.09);
+	}
+
+	&__icon {
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+
+	&__body {
+		padding: 2em 1.5em;
+		font-size: 1.2em;
+		overflow-wrap: break-word;
+	}
 }

@@ -24,7 +24,6 @@ body {
 }
 
 .nav {
-  position: fixed;
   width: 100%;
   background-color: rgb(243, 243, 243);
   border-bottom: 1px solid #999;
@@ -65,4 +64,43 @@ body {
 }
 .nav__menu-buttons-add {
   margin-right: 1em;
+}
+
+.note-area {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+.notecard {
+  height: 100%;
+  min-height: 200px;
+  max-height: 400px;
+  width: 100%;
+  margin: 0 0 3em 0;
+  background-color: yellow;
+  border-radius: 8px;
+  border: 1px solid #999;
+  overflow-y: scroll;
+}
+.notecard__header, .notecard__icon {
+  font-size: 1.4em;
+}
+.notecard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+.notecard__icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.notecard__body {
+  padding: 2em 1.5em;
+  font-size: 1.2em;
+  overflow-wrap: break-word;
 }/*# sourceMappingURL=style.css.map */
