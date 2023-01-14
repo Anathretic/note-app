@@ -103,4 +103,62 @@ body {
   padding: 2em 1.5em;
   font-size: 1.2em;
   overflow-wrap: break-word;
+}
+
+.popup-shadow {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4em 0;
+  width: 90%;
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0 0 10px black;
+  border-radius: 8px;
+}
+.popup__title {
+  margin-bottom: 2em;
+  text-transform: uppercase;
+}
+.popup label {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+.popup #text,
+.popup #category {
+  margin-bottom: 2em;
+  padding: 1em 2em;
+  width: 100%;
+  min-width: 90%;
+  max-width: 90%;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.popup__error {
+  color: tomato;
+  font-size: 1.4em;
+  margin-bottom: 2em;
+  visibility: hidden;
+}
+.popup__buttons-save, .popup__buttons-close {
+  padding: 0.8em;
+  border: 1px solid #999;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-size: 1.4em;
 }/*# sourceMappingURL=style.css.map */
