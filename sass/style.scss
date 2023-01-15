@@ -320,4 +320,14 @@ body {
 		bottom: 3rem;
 		padding: 1.5em;
 	}
+
+	.popup {
+		width: 50%;
+	}
+}
+
+@media (min-width: 1220px) {
+	.popup {
+		width: 40%;
+	}
 }
