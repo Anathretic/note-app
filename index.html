@@ -20,7 +20,7 @@
         <div class="popup">
             <h2 class="popup__title">add note</h2>
             <label for="category">Choose category</label>
-            <select id="category">
+            <select id="category" onchange="selectCategory()">
                 <option value="0" disabled selected>- choose category -</option>
                 <option value="1">Work</option>
                 <option value="1">School</option>
@@ -30,7 +30,7 @@
             </select>
 
             <label for="text">Add text</label>
-            <textarea id="text"></textarea>
+            <textarea id="text" maxlength="300"></textarea>
 
             <div class="popup__error">Fill in all the gaps!</div>
             <div class="popup__buttons">
@@ -60,18 +60,6 @@
        </a>
         <div class="wrapper">
             <section class="note-area">
-                <div class="notecard">
-                    <div class="notecard__header">
-                        <h3 class="notecard__title">Zakupy</h3>
-                        <button class="notecard__icon">
-                            <i class="fas fa-times icon"></i>
-                        </button>
-                    </div>
-
-                    <div class="notecard__body">
-                        - Herbata
-                    </div>
-                </div>
             </section>
         </div>
     </main>
