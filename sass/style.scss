@@ -76,7 +76,7 @@ body {
 
 .note-area {
 	display: flex;
-	align-items: start;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 	padding: 2em;
 }
@@ -84,17 +84,16 @@ body {
 .notecard {
 	height: 100%;
 	min-height: 200px;
-	max-height: 400px;
+	max-height: 300px;
 	width: 100%;
 	margin: 0 0 3em 0;
 	background-color: yellow;
 	border-radius: 8px;
 	border: 1px solid colors.$border-color;
-	overflow-y: scroll;
 
 	&__header,
 	&__icon {
-		font-size: 1.4em;
+		font-size: 1.3em;
 	}
 
 	&__header {
@@ -113,7 +112,8 @@ body {
 
 	&__body {
 		padding: 2em 1.5em;
-		font-size: 1.2em;
+		font-size: 1.4em;
+		overflow: auto;
 		overflow-wrap: break-word;
 	}
 }
@@ -154,6 +154,7 @@ body {
 
 	#text,
 	#category {
+		font-family: 'Montserrat', sans-serif;
 		margin-bottom: 2em;
 		padding: 1em 2em;
 		width: 100%;
@@ -176,6 +177,113 @@ body {
 		&-close {
 			@include mixin.allBtns;
 			font-size: 1.4em;
+		}
+	}
+}
+
+@media (max-height: 476px) {
+	.popup {
+		padding: 1.5em 0;
+		width: 90%;
+
+		&__title {
+			margin-bottom: 1em;
+		}
+
+		label {
+			margin-bottom: 0.5em;
+		}
+
+		#text,
+		#category {
+			margin-bottom: 1em;
+			padding: 1em 2em;
+		}
+
+		&__error {
+			margin-bottom: 1em;
+		}
+	}
+}
+@media (min-width: 720px) {
+	.nav {
+		&__menu {
+			&-title {
+				font-size: 2.8em;
+			}
+
+			&-buttons {
+				&-add,
+				&-deleteall {
+					font-size: 1.6em;
+				}
+			}
+		}
+	}
+
+	.popup {
+		width: 70%;
+
+		&__title {
+			font-size: 2em;
+		}
+
+		#text,
+		#category {
+			font-size: 1.4em;
+		}
+
+		label {
+			font-size: 1.5em;
+		}
+
+		&__error {
+			font-size: 1.6em;
+		}
+	}
+
+	.notecard {
+		margin: 30px 20px;
+		width: 300px;
+
+		&__body {
+			font-size: 1.3em;
+		}
+
+		&__header,
+		&__icon {
+			font-size: 1.4em;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__menu {
+			&-title {
+				font-size: 3.2em;
+			}
+
+			&-buttons {
+				&-add,
+				&-deleteall {
+					font-size: 1.8em;
+				}
+			}
+		}
+	}
+
+	.notecard {
+		margin: 30px 20px;
+		width: 350px;
+
+		&__body {
+			font-size: 1.4em;
+		}
+
+		&__header,
+		&__icon {
+			font-size: 1.5em;
 		}
 	}
 }
