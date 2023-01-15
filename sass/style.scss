@@ -26,6 +26,18 @@ body {
 	max-width: 1200px;
 }
 
+.return__arrow {
+	display: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	padding: 1em;
+	border-radius: 50%;
+	background-color: colors.$second-color;
+	animation: arrow-up-animation 1s forwards;
+	z-index: 9;
+}
+
 .nav {
 	width: 100%;
 	background-color: colors.$main-color;
@@ -255,6 +267,12 @@ body {
 			font-size: 1.4em;
 		}
 	}
+
+	.return__arrow {
+		right: 2rem;
+		bottom: 2rem;
+		padding: 1.2em;
+	}
 }
 
 @media (min-width: 992px) {
@@ -285,5 +303,11 @@ body {
 		&__icon {
 			font-size: 1.5em;
 		}
+	}
+
+	.return__arrow {
+		right: 3rem;
+		bottom: 3rem;
+		padding: 1.5em;
 	}
 }
