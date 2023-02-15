@@ -2,8 +2,35 @@
 
 @mixin allBtns {
 	padding: 0.8em;
+	font-size: 1.4em;
 	border: 1px solid colors.$border-color;
 	border-radius: 8px;
 	transition: background-color 0.3s, color 0.3s;
 	cursor: pointer;
+}
+
+@mixin btnHover {
+	background-color: colors.$second-color;
+	color: colors.$main-color;
+}
+
+@mixin customScroll {
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: colors.$second-color;
+		border-radius: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	& {
+		scrollbar-face-color: colors.$second-color;
+		scrollbar-track-color: transparent;
+	  }
 }
