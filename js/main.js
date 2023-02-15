@@ -35,6 +35,9 @@ const prepareDOMElements = () => {
 
 const prepareDOMEvents = () => {
 	window.addEventListener('scroll', showArrow)
+	document.addEventListener('keyup', e => {
+		clickCheck(e)
+	})
 	NAV_ADD_BTN.addEventListener('click', showPopup)
 	NAV_DELETE_ALL_BTN.addEventListener('click', deleteAllNotes)
 	POPUP_SAVE_BTN.addEventListener('click', checkInputs)
@@ -125,6 +128,25 @@ const showArrow = () => {
 	}
 
 	RETURN_ARROW.classList.toggle('arrow-up-animation')
+}
+
+const clickCheck = e => {
+	if(POPUP.style.display === 'flex') {
+		enterCheck(e)
+		escapeCheck(e)
+	}
+}
+
+const enterCheck = e => {
+	if(e.key === 'Enter') {
+		checkInputs()
+	}
+}
+
+const escapeCheck = e => {
+	if(e.key === 'Escape') {
+		closePopup()
+	}
 }
 
 document.addEventListener('DOMContentLoaded', main)
