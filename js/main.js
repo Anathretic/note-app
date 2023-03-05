@@ -120,12 +120,10 @@ const deleteAllNotes = () => {
 
 const showArrow = () => {
 	if (window.scrollY > 100) {
-		RETURN_ARROW.style.display = 'block'
+		RETURN_ARROW.classList.add('active-arrow')
 	} else {
-		RETURN_ARROW.style.display = 'none'
+		RETURN_ARROW.classList.remove('active-arrow')
 	}
-
-	RETURN_ARROW.classList.toggle('arrow-up-animation')
 }
 
 const escapeCheck = e => {
