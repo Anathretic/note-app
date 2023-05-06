@@ -20,7 +20,7 @@
         <div class="popup">
             <h2 class="popup__title">add note</h2>
             <label for="category">Choose category</label>
-            <select id="category" onchange="selectCategory()">
+            <select class="popup__select" id="category" onchange="selectCategory()">
                 <option value="0" disabled selected>- choose category -</option>
                 <option value="1">Work</option>
                 <option value="1">School</option>
@@ -30,12 +30,12 @@
             </select>
 
             <label for="text">Add text</label>
-            <textarea id="text" maxlength="300" placeholder="You have to write something.."></textarea>
+            <textarea class="popup__txtarea" id="text" maxlength="300" placeholder="You have to write something.."></textarea>
 
             <div class="popup__error">Fill in all the gaps!</div>
             <div class="popup__buttons">
-                <button class="popup__buttons-save"><i class="fas fa-save"></i> Save</button>
-                <button class="popup__buttons-close"><i class="far fa-window-close"></i> Cancel</button>
+                <button class="popup__button-save"><i class="fas fa-save"></i> Save</button>
+                <button class="popup__button-close"><i class="far fa-window-close"></i> Cancel</button>
             </div>
         </div>
     </div>
@@ -44,9 +44,9 @@
         <div class="nav__wrapper">
             <div class="nav__menu">
                 <h1 class="nav__menu-title"><i class="fa-regular fa-note-sticky"></i> NoteApp</h1>
-                <div class="nav__menu-buttons">
-                    <button class="nav__menu-buttons-add"><i class="fas fa-plus"></i></button>
-                    <button class="nav__menu-buttons-deleteall"><i class="fas fa-trash-alt"></i></button>
+                <div class="nav__buttons">
+                    <button class="nav__button-add"><i class="fas fa-plus"></i></button>
+                    <button class="nav__button-deleteall"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
         </div>

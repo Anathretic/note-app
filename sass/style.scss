@@ -20,6 +20,10 @@ body {
 	color: colors.$second-color;
 }
 
+.scroll-block {
+	overflow: hidden;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 100%;
@@ -68,24 +72,26 @@ body {
 			font-size: 2.6em;
 			font-weight: 300;
 		}
+	}
 
-		&-buttons {
-			padding: 0.5em;
-			background: none;
+	&__buttons {
+		padding: 0.5em;
+		background: none;
+	}
 
-			&-add,
-			&-deleteall {
-				@include mixin.allBtns;
-			}
+	&__button {
+		&-add,
+		&-deleteall {
+			@include mixin.allBtns;
+		}
 
-			&-add:hover,
-			&-deleteall:hover {
-				@include mixin.btnHover;
-			}
+		&-add:hover,
+		&-deleteall:hover {
+			@include mixin.btnHover;
+		}
 
-			&-add {
-				margin-right: 1em;
-			}
+		&-add {
+			margin-right: 1em;
 		}
 	}
 }
@@ -133,7 +139,7 @@ body {
 		overflow-y: scroll;
 		overflow-wrap: break-word;
 		white-space: pre-line;
-		@include mixin.customScroll
+		@include mixin.customScroll;
 	}
 }
 
@@ -171,8 +177,8 @@ body {
 		font-size: 1.4em;
 	}
 
-	#text,
-	#category {
+	&__select,
+	&__txtarea {
 		padding: 1em 2em;
 		margin-bottom: 2em;
 		width: 100%;
@@ -191,9 +197,10 @@ body {
 		visibility: hidden;
 	}
 
-	&__buttons {
+	&__button {
 		&-save,
 		&-close {
+			width: 125px;
 			@include mixin.allBtns;
 		}
 
@@ -204,11 +211,9 @@ body {
 	}
 }
 
-@media (min-height: 500px) {
+@media (max-height: 335px) {
 	.popup {
-		#text {
-			height: 300px;
-		}
+		height: 98%;
 	}
 }
 
@@ -225,8 +230,8 @@ body {
 			margin-bottom: 0.5em;
 		}
 
-		#text,
-		#category {
+		&__select,
+		&__txtarea {
 			margin-bottom: 1em;
 			padding: 1em 2em;
 		}
@@ -236,18 +241,33 @@ body {
 		}
 	}
 }
+
+@media (min-height: 500px) {
+	.popup {
+		&__txtarea {
+			height: 300px;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.popup {
+		height: 95%;
+	}
+}
+
 @media (min-width: 720px) {
 	.nav {
 		&__menu {
 			&-title {
 				font-size: 2.8em;
 			}
+		}
 
-			&-buttons {
-				&-add,
-				&-deleteall {
-					font-size: 1.6em;
-				}
+		&__button {
+			&-add,
+			&-deleteall {
+				font-size: 1.6em;
 			}
 		}
 	}
@@ -259,13 +279,13 @@ body {
 			font-size: 2em;
 		}
 
-		#text,
-		#category {
+		&__select,
+		&__txtarea {
 			font-size: 1.4em;
 		}
 
 		label {
-			font-size: 1.5em;
+			font-size: 1.6em;
 		}
 
 		&__error {
@@ -300,12 +320,12 @@ body {
 			&-title {
 				font-size: 3.2em;
 			}
+		}
 
-			&-buttons {
-				&-add,
-				&-deleteall {
-					font-size: 1.8em;
-				}
+		&__button {
+			&-add,
+			&-deleteall {
+				font-size: 1.8em;
 			}
 		}
 	}
@@ -315,12 +335,12 @@ body {
 		width: 350px;
 
 		&__body {
-			font-size: 1.4em;
+			font-size: 1.5em;
 		}
 
 		&__header,
 		&__icon {
-			font-size: 1.5em;
+			font-size: 1.6em;
 		}
 	}
 
@@ -331,7 +351,20 @@ body {
 	}
 
 	.popup {
-		width: 50%;
+		width: 60%;
+
+		label {
+			font-size: 1.8em;
+		}
+
+		&__select,
+		&__txtarea {
+			font-size: 1.6em;
+		}
+
+		&__error {
+			font-size: 1.8em;
+		}
 	}
 }
 

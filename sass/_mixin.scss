@@ -7,6 +7,14 @@
 	border-radius: 8px;
 	transition: background-color 0.3s, color 0.3s;
 	cursor: pointer;
+
+	@media (min-width: 768px) {
+		font-size: 1.6em;
+	}
+	
+	@media (min-width: 992px) {
+		font-size: 1.8em;
+	}
 }
 
 @mixin btnHover {

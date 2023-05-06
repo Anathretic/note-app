@@ -1,3 +1,4 @@
+let BODY
 let NAV_ADD_BTN
 let NAV_DELETE_ALL_BTN
 let NOTE_AREA
@@ -18,15 +19,16 @@ const main = () => {
 }
 
 const prepareDOMElements = () => {
-	NAV_ADD_BTN = document.querySelector('.nav__menu-buttons-add')
-	NAV_DELETE_ALL_BTN = document.querySelector('.nav__menu-buttons-deleteall')
+	BODY = document.querySelector('body')
+	NAV_ADD_BTN = document.querySelector('.nav__button-add')
+	NAV_DELETE_ALL_BTN = document.querySelector('.nav__button-deleteall')
 	NOTE_AREA = document.querySelector('.note-area')
 	POPUP = document.querySelector('.popup-shadow')
 	POPUP_CATEGORY_INPUT = document.querySelector('#category')
 	POPUP_TEXT_INPUT = document.querySelector('#text')
 	POPUP_ERROR_MSG = document.querySelector('.popup__error')
-	POPUP_SAVE_BTN = document.querySelector('.popup__buttons-save')
-	POPUP_CANCEL_BTN = document.querySelector('.popup__buttons-close')
+	POPUP_SAVE_BTN = document.querySelector('.popup__button-save')
+	POPUP_CANCEL_BTN = document.querySelector('.popup__button-close')
 	NOTE_DELETE_BTN = document.getElementsByClassName('notecard__icon')
 	RETURN_ARROW = document.querySelector('.return__arrow')
 	CARD_ID = 0
@@ -44,6 +46,7 @@ const prepareDOMEvents = () => {
 
 const showPopup = () => {
 	POPUP.style.display = 'flex'
+	BODY.classList.add('scroll-block')
 }
 
 const closePopup = () => {
@@ -63,6 +66,7 @@ const clearPopup = () => {
 	POPUP_CATEGORY_INPUT.selectedIndex = 0
 	POPUP_TEXT_INPUT.value = ''
 	POPUP_ERROR_MSG.style.visibility = 'hidden'
+	BODY.classList.remove('scroll-block')
 }
 
 const createNote = () => {

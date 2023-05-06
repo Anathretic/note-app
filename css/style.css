@@ -17,6 +17,10 @@ body {
   color: #333;
 }
 
+.scroll-block {
+  overflow: hidden;
+}
+
 .wrapper {
   margin: 0 auto;
   width: 100%;
@@ -64,11 +68,11 @@ body {
   font-size: 2.6em;
   font-weight: 300;
 }
-.nav__menu-buttons {
+.nav__buttons {
   padding: 0.5em;
   background: none;
 }
-.nav__menu-buttons-add, .nav__menu-buttons-deleteall {
+.nav__button-add, .nav__button-deleteall {
   padding: 0.8em;
   font-size: 1.4em;
   border: 1px solid #999;
@@ -76,11 +80,21 @@ body {
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
-.nav__menu-buttons-add:hover, .nav__menu-buttons-deleteall:hover {
+@media (min-width: 768px) {
+  .nav__button-add, .nav__button-deleteall {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 992px) {
+  .nav__button-add, .nav__button-deleteall {
+    font-size: 1.8em;
+  }
+}
+.nav__button-add:hover, .nav__button-deleteall:hover {
   background-color: #333;
   color: rgb(243, 243, 243);
 }
-.nav__menu-buttons-add {
+.nav__button-add {
   margin-right: 1em;
 }
 
@@ -172,8 +186,7 @@ body {
   margin-bottom: 0.5em;
   font-size: 1.4em;
 }
-.popup #text,
-.popup #category {
+.popup__select, .popup__txtarea {
   padding: 1em 2em;
   margin-bottom: 2em;
   width: 100%;
@@ -190,7 +203,8 @@ body {
   font-size: 1.4em;
   visibility: hidden;
 }
-.popup__buttons-save, .popup__buttons-close {
+.popup__button-save, .popup__button-close {
+  width: 125px;
   padding: 0.8em;
   font-size: 1.4em;
   border: 1px solid #999;
@@ -198,14 +212,24 @@ body {
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
-.popup__buttons-save:hover, .popup__buttons-close:hover {
+@media (min-width: 768px) {
+  .popup__button-save, .popup__button-close {
+    font-size: 1.6em;
+  }
+}
+@media (min-width: 992px) {
+  .popup__button-save, .popup__button-close {
+    font-size: 1.8em;
+  }
+}
+.popup__button-save:hover, .popup__button-close:hover {
   background-color: #333;
   color: rgb(243, 243, 243);
 }
 
-@media (min-height: 500px) {
-  .popup #text {
-    height: 300px;
+@media (max-height: 335px) {
+  .popup {
+    height: 98%;
   }
 }
 @media (max-height: 476px) {
@@ -219,8 +243,7 @@ body {
   .popup label {
     margin-bottom: 0.5em;
   }
-  .popup #text,
-  .popup #category {
+  .popup__select, .popup__txtarea {
     margin-bottom: 1em;
     padding: 1em 2em;
   }
@@ -228,11 +251,21 @@ body {
     margin-bottom: 1em;
   }
 }
+@media (min-height: 500px) {
+  .popup__txtarea {
+    height: 300px;
+  }
+}
+@media (max-width: 350px) {
+  .popup {
+    height: 95%;
+  }
+}
 @media (min-width: 720px) {
   .nav__menu-title {
     font-size: 2.8em;
   }
-  .nav__menu-buttons-add, .nav__menu-buttons-deleteall {
+  .nav__button-add, .nav__button-deleteall {
     font-size: 1.6em;
   }
   .popup {
@@ -241,12 +274,11 @@ body {
   .popup__title {
     font-size: 2em;
   }
-  .popup #text,
-  .popup #category {
+  .popup__select, .popup__txtarea {
     font-size: 1.4em;
   }
   .popup label {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
   .popup__error {
     font-size: 1.6em;
@@ -271,7 +303,7 @@ body {
   .nav__menu-title {
     font-size: 3.2em;
   }
-  .nav__menu-buttons-add, .nav__menu-buttons-deleteall {
+  .nav__button-add, .nav__button-deleteall {
     font-size: 1.8em;
   }
   .notecard {
@@ -279,10 +311,10 @@ body {
     width: 350px;
   }
   .notecard__body {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
   .notecard__header, .notecard__icon {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
   .return__arrow {
     right: 3rem;
@@ -290,7 +322,16 @@ body {
     padding: 1.5em;
   }
   .popup {
-    width: 50%;
+    width: 60%;
+  }
+  .popup label {
+    font-size: 1.8em;
+  }
+  .popup__select, .popup__txtarea {
+    font-size: 1.6em;
+  }
+  .popup__error {
+    font-size: 1.8em;
   }
 }
 @media (min-width: 1220px) {
