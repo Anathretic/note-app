@@ -1,0 +1,57 @@
+@media (min-width: 720px) {
+	.nav {
+		&__menu {
+			&-title {
+				font-size: 2.8em;
+			}
+		}
+
+		&__button {
+			&-add,
+			&-deleteall {
+				font-size: 1.6em;
+			}
+		}
+	}
+
+	.popup {
+		width: 70%;
+
+		&__title {
+			font-size: 2em;
+		}
+
+		&__select,
+		&__txtarea {
+			font-size: 1.4em;
+		}
+
+		label {
+			font-size: 1.6em;
+		}
+
+		&__error {
+			font-size: 1.6em;
+		}
+	}
+
+	.notecard {
+		margin: 30px 20px;
+		width: 300px;
+
+		&__body {
+			font-size: 1.3em;
+		}
+
+		&__header,
+		&__icon {
+			font-size: 1.4em;
+		}
+	}
+
+	.return__arrow {
+		right: 2rem;
+		bottom: 2rem;
+		padding: 1.2em;
+	}
+}

@@ -261,6 +261,16 @@ body {
     height: 95%;
   }
 }
+@media (min-width: 450px) {
+  .notecard {
+    width: 55%;
+  }
+}
+@media (max-width: 450px) {
+  .notecard {
+    width: 85%;
+  }
+}
 @media (min-width: 720px) {
   .nav__menu-title {
     font-size: 2.8em;
@@ -338,4 +348,4 @@ body {
   .popup {
     width: 40%;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=main.css.map */

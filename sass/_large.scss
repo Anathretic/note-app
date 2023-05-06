@@ -1,0 +1,59 @@
+@media (min-width: 992px) {
+	.nav {
+		&__menu {
+			&-title {
+				font-size: 3.2em;
+			}
+		}
+
+		&__button {
+			&-add,
+			&-deleteall {
+				font-size: 1.8em;
+			}
+		}
+	}
+
+	.notecard {
+		margin: 30px 20px;
+		width: 350px;
+
+		&__body {
+			font-size: 1.5em;
+		}
+
+		&__header,
+		&__icon {
+			font-size: 1.6em;
+		}
+	}
+
+	.return__arrow {
+		right: 3rem;
+		bottom: 3rem;
+		padding: 1.5em;
+	}
+
+	.popup {
+		width: 60%;
+
+		label {
+			font-size: 1.8em;
+		}
+
+		&__select,
+		&__txtarea {
+			font-size: 1.6em;
+		}
+
+		&__error {
+			font-size: 1.8em;
+		}
+	}
+}
+
+@media (min-width: 1220px) {
+	.popup {
+		width: 40%;
+	}
+}
