@@ -1,5 +1,6 @@
 @use 'colors';
 @use 'mixin';
+@use 'animation';
 
 *,
 *::after,
@@ -110,6 +111,7 @@ body {
 	background-color: yellow;
 	border-radius: 8px;
 	border: 1px solid colors.$border-color;
+	animation: fade-in 0.3s 1;
 	overflow: hidden;
 
 	&__header,
