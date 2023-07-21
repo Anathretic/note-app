@@ -31,11 +31,12 @@ const prepareDOMElements = () => {
 	POPUP_CANCEL_BTN = document.querySelector('.popup__button-close')
 	NOTE_DELETE_BTN = document.getElementsByClassName('notecard__icon')
 	RETURN_ARROW = document.querySelector('.return__arrow')
-	CARD_ID = 0
+	CARD_ID = Math.random()
 	SELECTED_CATEGORY
 }
 
 const prepareDOMEvents = () => {
+	oldNotes()
 	window.addEventListener('scroll', showArrow)
 	document.addEventListener('keyup', e => escapeCheck(e))
 	NAV_ADD_BTN.addEventListener('click', showPopup)
@@ -70,9 +71,11 @@ const clearPopup = () => {
 }
 
 const createNote = () => {
-	const newNote = document.createElement('div')
+	const newNote = document.createElement('li')
 	newNote.classList.add('notecard')
 	newNote.setAttribute('id', CARD_ID)
+	newNote.setAttribute('category', SELECTED_CATEGORY)
+	newNote.setAttribute('text', POPUP_TEXT_INPUT.value)
 	newNote.innerHTML = `
                     <div class="notecard__header">
                         <h3 class="notecard__title">${SELECTED_CATEGORY}</h3>
@@ -87,6 +90,38 @@ const createNote = () => {
 	checkCategory(newNote)
 	CARD_ID++
 	closePopup()
+
+	const localStorageData = {
+		id: newNote.getAttribute('id'),
+		category: newNote.getAttribute('category'),
+		text: newNote.getAttribute('text'),
+	}
+
+	localStorage.setItem(`${localStorageData.id}`, JSON.stringify(localStorageData))
+}
+
+const oldNotes = () => {
+	for (let i = 0; i < localStorage.length; i++) {
+		let key = localStorage.key(i)
+		let value = JSON.parse(localStorage.getItem(key))
+
+		const oldNote = document.createElement('li')
+		oldNote.classList.add('notecard')
+		oldNote.setAttribute('id', value.id)
+		SELECTED_CATEGORY = value.category
+		oldNote.innerHTML = `
+						<div class="notecard__header">
+							<h3 class="notecard__title">${SELECTED_CATEGORY}</h3>
+							<button class="notecard__icon" onclick="deleteNote(${value.id})">
+								<i class="fas fa-times icon"></i>
+							</button>
+						</div>
+						<div class="notecard__body">
+							${value.text}
+						</div>`
+		NOTE_AREA.appendChild(oldNote)
+		checkCategory(oldNote)
+	}
 }
 
 const selectCategory = () => {
@@ -115,11 +150,13 @@ const checkCategory = note => {
 
 const deleteNote = id => {
 	const noteToDelete = document.getElementById(id)
+	localStorage.removeItem(id)
 	NOTE_AREA.removeChild(noteToDelete)
 }
 
 const deleteAllNotes = () => {
 	NOTE_AREA.textContent = ''
+	localStorage.clear()
 }
 
 const showArrow = () => {
@@ -131,7 +168,7 @@ const showArrow = () => {
 }
 
 const escapeCheck = e => {
-	if(e.key === 'Escape') {
+	if (e.key === 'Escape') {
 		closePopup()
 	}
 }
