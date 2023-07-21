@@ -18,7 +18,7 @@
 		width: 70%;
 
 		&__title {
-			font-size: 2em;
+			font-size: 1.6em;
 		}
 
 		&__select,
@@ -26,12 +26,13 @@
 			font-size: 1.4em;
 		}
 
-		label {
-			font-size: 1.6em;
+		&__txtarea {
+			min-height: 80px;
+			margin-bottom: 2em;
 		}
 
-		&__error {
-			font-size: 1.6em;
+		label {
+			font-size: 1.4em;
 		}
 	}
 

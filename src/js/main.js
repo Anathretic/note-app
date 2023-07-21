@@ -5,7 +5,6 @@ let NOTE_AREA
 let POPUP
 let POPUP_CATEGORY_INPUT
 let POPUP_TEXT_INPUT
-let POPUP_ERROR_MSG
 let POPUP_SAVE_BTN
 let POPUP_CANCEL_BTN
 let NOTE_DELETE_BTN
@@ -26,7 +25,6 @@ const prepareDOMElements = () => {
 	POPUP = document.querySelector('.popup-shadow')
 	POPUP_CATEGORY_INPUT = document.querySelector('#category')
 	POPUP_TEXT_INPUT = document.querySelector('#text')
-	POPUP_ERROR_MSG = document.querySelector('.popup__error')
 	POPUP_SAVE_BTN = document.querySelector('.popup__button-save')
 	POPUP_CANCEL_BTN = document.querySelector('.popup__button-close')
 	NOTE_DELETE_BTN = document.getElementsByClassName('notecard__icon')
@@ -39,9 +37,11 @@ const prepareDOMEvents = () => {
 	oldNotes()
 	window.addEventListener('scroll', showArrow)
 	document.addEventListener('keyup', e => escapeCheck(e))
+	POPUP.addEventListener('keyup', checkBtn)
+	POPUP.addEventListener('click', checkBtn)
 	NAV_ADD_BTN.addEventListener('click', showPopup)
 	NAV_DELETE_ALL_BTN.addEventListener('click', deleteAllNotes)
-	POPUP_SAVE_BTN.addEventListener('click', checkInputs)
+	POPUP_SAVE_BTN.addEventListener('click', createNote)
 	POPUP_CANCEL_BTN.addEventListener('click', closePopup)
 }
 
@@ -55,18 +55,18 @@ const closePopup = () => {
 	clearPopup()
 }
 
-const checkInputs = () => {
+const checkBtn = () => {
 	if (POPUP_TEXT_INPUT.value !== '' && POPUP_CATEGORY_INPUT.options[POPUP_CATEGORY_INPUT.selectedIndex].value !== '0') {
-		createNote()
+		POPUP_SAVE_BTN.disabled = false
 	} else {
-		POPUP_ERROR_MSG.style.visibility = 'visible'
+		POPUP_SAVE_BTN.disabled = true
 	}
 }
 
 const clearPopup = () => {
 	POPUP_CATEGORY_INPUT.selectedIndex = 0
 	POPUP_TEXT_INPUT.value = ''
-	POPUP_ERROR_MSG.style.visibility = 'hidden'
+	POPUP_SAVE_BTN.disabled = true
 	BODY.classList.remove('scroll-block')
 }
 

@@ -182,21 +182,29 @@ body {
 	&__select,
 	&__txtarea {
 		padding: 1em 2em;
-		margin-bottom: 2em;
-		width: 100%;
-		min-width: 90%;
-		max-width: 90%;
+		width: 90%;
 		max-height: 200px;
 		font-family: 'Montserrat', sans-serif;
+		box-shadow: 1px 1px 5px black;
+		border: 1px solid transparent;
 		border-radius: 8px;
-		border: 1px solid black;
+
+		&:focus {
+			box-shadow: 1px 1px 10px rgb(202, 144, 154);
+			outline: none;
+		}
 	}
 
-	&__error {
+	&__select {
 		margin-bottom: 2em;
-		color: tomato;
-		font-size: 1.4em;
-		visibility: hidden;
+		border-right: 20px solid transparent;
+		cursor: pointer;
+	}
+
+	&__txtarea {
+		max-width: 90%;
+		margin-bottom: 4em;
+		resize: vertical;
 	}
 
 	&__button {
@@ -206,9 +214,18 @@ body {
 			@include mixin.allBtns;
 		}
 
-		&-save:hover,
+		&-save:enabled:hover,
 		&-close:hover {
 			@include mixin.btnHover;
+		}
+
+		&-save:disabled {
+			cursor: default;
+
+			&:hover {
+				background: none;
+				color: none;
+			}
 		}
 	}
 }
