@@ -46,8 +46,9 @@
 			font-size: 1.6em;
 		}
 
-		&__error {
-			font-size: 1.8em;
+		&__txtarea {
+			min-height: 120px;
+			height: 180px;
 		}
 	}
 }
