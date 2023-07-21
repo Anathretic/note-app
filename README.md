@@ -1,8 +1,13 @@
-# note-app
+# NoteApp (JavaScript App)
 
-An application that can be used like a refrigerator door that is always covered with sticky notes.
-Adding notes, deleting notes, enjoy!
+## About
 
-Used: HTML5, CSS (Flexbox layout), SASS, JavaScript, Gulp (with modules like babel), BEM Methodology, RWD.
+Web application that allows you to quickly create a note using a popup menu. Each note has category that determine the background color. Additionally, you won't create a note if you don't fill out all the fields, because save button is disabled by default.
 
-Folder 'dist' was added due to the use of github-pages.
+Data is stored in localStorage, so you can safely close your browser and your notes will still be there - all thanks to the browser's storage. Of course, in a bigger project I would definitely use the REST API, but it's a small project and I just wanted to practice some features.
+
+## Links & Tools
+
+**Used:** HTML, CSS (incl. SASS preprocessor), JavaScript, Gulp
+
+**URL:** Coming soon
