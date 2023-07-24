@@ -44,11 +44,17 @@
 		bottom: 2rem;
 		padding: 1.2em;
 	}
+
+	.notfound {
+		&__img {
+			width: 70%;
+		}
+	}
 }
 
 @media (min-height: 700px) {
 	.popup {
-		height: 77%;
+		height: 70%;
 		width: 80%;
 	}
 }

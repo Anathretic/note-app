@@ -97,6 +97,52 @@ body {
 	}
 }
 
+.button-box {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	left: 0;
+	bottom: 10px;
+	z-index: 5;
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		height: 60px;
+		width: 60px;
+		color: colors.$second-color;
+		background-color: colors.$special-color;
+		font-size: 2.2em;
+		text-align: center;
+		text-decoration: none;
+		border: none;
+		transition: background-color 0.3s, color 0.3s;
+		z-index: 10;
+
+		&--one {
+			margin-bottom: 5px;
+			border-radius: 0 8px 0 0;
+			pointer-events: none;
+		}
+
+		&--two {
+			margin-bottom: 5px;
+		}
+
+		&--three {
+			border-radius: 0 0 8px 0;
+		}
+
+		&:hover {
+			color: colors.$special-color;
+			background-color: colors.$second-color;
+		}
+	}
+}
+
 .note-area {
 	display: flex;
 	justify-content: space-evenly;
@@ -164,7 +210,7 @@ body {
 	width: 90%;
 	max-width: 1000px;
 	height: 90%;
-	max-height: 650px;
+	max-height: 570px;
 	background-color: colors.$main-color;
 	border-radius: 8px;
 	box-shadow: 1px 1px 30px colors.$second-color;
@@ -252,6 +298,37 @@ body {
 				background: none;
 				color: none;
 			}
+		}
+	}
+}
+
+.notfound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+
+	&__img {
+		width: 90%;
+	}
+
+	&__btn {
+		padding: 1em 4em;
+		margin: 1em;
+		background-color: colors.$special-color;
+		color: colors.$second-color;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		text-decoration: none;
+		border-radius: 8px;
+		transition: background-color 0.3s, color 0.3s;
+
+		&:hover {
+			background-color: colors.$second-color;
+			color: colors.$main-color;
 		}
 	}
 }

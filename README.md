@@ -10,4 +10,4 @@ Data is stored in localStorage, so you can safely close your browser and your no
 
 **Used:** HTML, CSS (incl. SASS preprocessor), JavaScript, Gulp
 
-**URL:** Coming soon
+**URL:** [Note-App](https://noteapp.online/)

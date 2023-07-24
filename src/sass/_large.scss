@@ -22,6 +22,14 @@
 		}
 	}
 
+	.button-box {
+		bottom: 40px;
+
+		&__item {
+			font-size: 2.8em;
+		}
+	}
+
 	.notecard {
 		margin: 30px 20px;
 		width: 350px;
@@ -37,7 +45,7 @@
 	}
 
 	.popup {
-		width: 55%;
+		width: 45%;
 		max-height: 620px;
 
 		&::-webkit-scrollbar {
@@ -71,5 +79,19 @@
 		right: 3rem;
 		bottom: 3rem;
 		padding: 1.5em;
+	}
+
+	.notfound {
+		padding-bottom: 5em;
+
+		&__img {
+			width: 50%;
+		}
+
+		&__btn {
+			padding: 1em 5em;
+			margin: 0;
+			font-size: 1.6em;
+		}
 	}
 }
