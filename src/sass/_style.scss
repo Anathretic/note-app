@@ -146,12 +146,14 @@ body {
 }
 
 .popup-shadow {
-	position: absolute;
+	position: fixed;
 	display: none;
-	width: 100%;
+	top: 0;
+	left: 0;
 	height: 100%;
+	width: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
-	z-index: 1;
+	z-index: 10;
 }
 
 .popup {
@@ -159,29 +161,47 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 4em 0;
 	width: 90%;
+	max-width: 1000px;
+	height: 90%;
+	max-height: 650px;
 	background-color: colors.$main-color;
-	box-shadow: 0 0 10px black;
 	border-radius: 8px;
+	box-shadow: 1px 1px 30px colors.$second-color;
+	overflow-y: scroll;
+	z-index: 11;
 
 	&__title {
-		margin-bottom: 2em;
+		padding: 2em;
 		text-transform: uppercase;
 	}
 
-	label {
-		margin-bottom: 0.5em;
-		font-size: 1.4em;
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 100%;
+		width: 100%;
+		padding: 1em;
+		text-align: center;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__label {
+		font-size: 1.2em;
 	}
 
 	&__select,
 	&__txtarea {
 		padding: 1em 2em;
+		margin-top: 0.5em;
 		width: 90%;
 		max-height: 200px;
 		font-family: 'Montserrat', sans-serif;
@@ -190,7 +210,7 @@ body {
 		border-radius: 8px;
 
 		&:focus {
-			box-shadow: 1px 1px 10px rgb(202, 144, 154);
+			box-shadow: 1px 1px 10px colors.$special-color;
 			outline: none;
 		}
 	}
@@ -202,9 +222,15 @@ body {
 	}
 
 	&__txtarea {
-		max-width: 90%;
-		margin-bottom: 4em;
+		height: 200px;
+		min-height: 120px;
+		max-height: 300px;
+		margin-bottom: 3em;
 		resize: vertical;
+	}
+
+	&__buttons {
+		padding-bottom: 3em;
 	}
 
 	&__button {

@@ -14,28 +14,6 @@
 		}
 	}
 
-	.popup {
-		width: 70%;
-
-		&__title {
-			font-size: 1.6em;
-		}
-
-		&__select,
-		&__txtarea {
-			font-size: 1.4em;
-		}
-
-		&__txtarea {
-			min-height: 80px;
-			margin-bottom: 2em;
-		}
-
-		label {
-			font-size: 1.4em;
-		}
-	}
-
 	.notecard {
 		margin: 30px 20px;
 		width: 300px;
@@ -50,9 +28,27 @@
 		}
 	}
 
+	.popup {
+		&__label {
+			font-size: 1.6em;
+		}
+
+		&__select,
+		&__txtarea {
+			font-size: 1.3em;
+		}
+	}
+
 	.return__arrow {
 		right: 2rem;
 		bottom: 2rem;
 		padding: 1.2em;
+	}
+}
+
+@media (min-height: 700px) {
+	.popup {
+		height: 77%;
+		width: 80%;
 	}
 }

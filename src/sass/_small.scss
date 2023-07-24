@@ -1,19 +1,38 @@
 @media (max-width: 300px) {
 	.popup {
-		height: 90%;
+		&__buttons {
+			padding-bottom: 0;
+		}
 
 		&__button {
-			&-save,
-			&-close {
-				width: 100px;
+			&-save {
+				margin-bottom: 1em;
 			}
 		}
 	}
 }
 
-@media (min-width: 301px ) and (max-width: 350px) {
+@media (min-width: 300px) {
 	.popup {
-		height: 95%;
+		&__title {
+			font-size: 1.8em;
+		}
+
+		&__label {
+			font-size: 1.4em;
+		}
+
+		&__select,
+		&__txtarea {
+			font-size: 1.2;
+		}
+
+		&__button {
+			&-save,
+			&-close {
+				margin: 1em;
+			}
+		}
 	}
 }
 
@@ -26,55 +45,5 @@
 @media (min-width: 451px) {
 	.notecard {
 		width: 55%;
-	}
-}
-
-@media (max-height: 290px) {
-	.popup {
-		font-size: 0.8em;
-
-		&__select,
-		&__txtarea {
-			font-size: 1.4em;
-		}
-
-	}
-}
-
-@media (max-height: 476px) {
-	.popup {
-		padding: 1.5em 0;
-		height: 90%;
-		width: 90%;
-
-		&__title {
-			margin-bottom: 1em;
-		}
-
-		label {
-			margin-bottom: 0.5em;
-		}
-
-		&__select,
-		&__txtarea {
-			padding: 1em 2em;
-		}
-
-		&__select {
-			margin-bottom: 1em;
-		}
-
-		&__txtarea {
-			margin-bottom: 2em;
-		}
-	}
-}
-
-@media (min-height: 500px) {
-	.popup {
-		&__txtarea {
-			min-height: 120px;
-			height: 300px;
-		}
 	}
 }
