@@ -1,3 +1,11 @@
+@use 'colors';
+
+@media (min-width: 767px) and (min-height: 1024px) {
+	.popup {
+		height: 57%;
+	}
+}
+
 @media (min-width: 992px) {
 	.nav {
 		&__menu {
@@ -28,33 +36,40 @@
 		}
 	}
 
-	.return__arrow {
-		right: 3rem;
-		bottom: 3rem;
-		padding: 1.5em;
-	}
-
 	.popup {
-		width: 60%;
+		width: 55%;
+		max-height: 620px;
 
-		label {
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: colors.$second-color;
+			border-radius: 8px;
+		}
+
+		&__container {
+			padding-right: 6px;
+		}
+
+		&__title {
+			font-size: 2em;
+		}
+
+		&__label {
 			font-size: 1.8em;
 		}
 
 		&__select,
 		&__txtarea {
-			font-size: 1.6em;
-		}
-
-		&__txtarea {
-			min-height: 120px;
-			height: 180px;
+			font-size: 1.4em;
 		}
 	}
-}
 
-@media (min-width: 1220px) {
-	.popup {
-		width: 40%;
+	.return__arrow {
+		right: 3rem;
+		bottom: 3rem;
+		padding: 1.5em;
 	}
 }

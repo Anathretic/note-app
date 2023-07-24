@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Scared by the amount of sticky notes on the fridge? Use our app and get rid of the problem once and for all!">
+    <meta name="description"
+        content="Scared by the amount of sticky notes on the fridge? Use our app and get rid of the problem once and for all!">
     <meta name="keywords" content="sticky_notes, note_app, virtual_notebook">
     <title>NoteApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,23 +21,27 @@
 
     <div class="popup-shadow">
         <div class="popup">
-            <h2 class="popup__title">add note</h2>
-            <label for="category">Choose category</label>
-            <select class="popup__select" id="category" onchange="selectCategory()">
-                <option value="0" disabled selected>- choose category -</option>
-                <option value="1">Work</option>
-                <option value="1">School</option>
-                <option value="1">Home</option>
-                <option value="1">Shop</option>
-                <option value="1">Other</option>
-            </select>
-
-            <label for="text">Add text</label>
-            <textarea class="popup__txtarea" id="text" maxlength="300" placeholder="You have to write something.."></textarea>
-
-            <div class="popup__buttons">
-                <button class="popup__button-save" disabled><i class="fas fa-save"></i> Save</button>
-                <button class="popup__button-close"><i class="far fa-window-close"></i> Cancel</button>
+            <div class="popup__container">
+                <h2 class="popup__title">add note</h2>
+                <div class="popup__box">
+                    <label class="popup__label" for="category">- Choose category -</label>
+                    <select class="popup__select" id="category" onchange="selectCategory()">
+                        <option value="0" disabled selected>- select it -</option>
+                        <option value="1">Work</option>
+                        <option value="1">School</option>
+                        <option value="1">Home</option>
+                        <option value="1">Shop</option>
+                        <option value="1">Other</option>
+                    </select>
+                </div>
+                <div class="popup__box">
+                    <label class="popup__label" for="text">- Add text -</label>
+                    <textarea class="popup__txtarea" id="text" maxlength="300" placeholder="Write something.."></textarea>
+                </div>
+                <div class="popup__buttons">
+                    <button class="popup__button-save" disabled><i class="fas fa-save"></i> Save</button>
+                    <button class="popup__button-close"><i class="far fa-window-close"></i> Cancel</button>
+                </div>
             </div>
         </div>
     </div>
@@ -58,7 +63,7 @@
             <div class="return__arrow">
                 <img class="return__arrow-icon" src="dist/img/arrow-up.svg" alt="">
             </div>
-       </a>
+        </a>
         <div class="wrapper">
             <ul class="note-area">
             </ul>

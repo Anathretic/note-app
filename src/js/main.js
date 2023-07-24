@@ -3,6 +3,7 @@ let NAV_ADD_BTN
 let NAV_DELETE_ALL_BTN
 let NOTE_AREA
 let POPUP
+let POPUP_CONTAINER
 let POPUP_CATEGORY_INPUT
 let POPUP_TEXT_INPUT
 let POPUP_SAVE_BTN
@@ -23,6 +24,7 @@ const prepareDOMElements = () => {
 	NAV_DELETE_ALL_BTN = document.querySelector('.nav__button-deleteall')
 	NOTE_AREA = document.querySelector('.note-area')
 	POPUP = document.querySelector('.popup-shadow')
+	POPUP_CONTAINER = document.querySelector('.popup')
 	POPUP_CATEGORY_INPUT = document.querySelector('#category')
 	POPUP_TEXT_INPUT = document.querySelector('#text')
 	POPUP_SAVE_BTN = document.querySelector('.popup__button-save')
@@ -51,8 +53,8 @@ const showPopup = () => {
 }
 
 const closePopup = () => {
-	POPUP.style.display = 'none'
 	clearPopup()
+	POPUP.style.display = 'none'
 }
 
 const checkBtn = () => {
@@ -64,6 +66,8 @@ const checkBtn = () => {
 }
 
 const clearPopup = () => {
+	POPUP_CONTAINER.scrollTo(0, 0)
+	POPUP_TEXT_INPUT.style.height = '200px'
 	POPUP_CATEGORY_INPUT.selectedIndex = 0
 	POPUP_TEXT_INPUT.value = ''
 	POPUP_SAVE_BTN.disabled = true
