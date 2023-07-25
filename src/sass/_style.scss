@@ -315,9 +315,13 @@ body {
 		width: 90%;
 	}
 
+	&__credits {
+		font-size: 0.8em;
+	}
+
 	&__btn {
 		padding: 1em 4em;
-		margin: 1em;
+		margin: 2em 1em;
 		background-color: colors.$special-color;
 		color: colors.$second-color;
 		font-size: 1.4em;

@@ -46,6 +46,10 @@
 	}
 
 	.notfound {
+		&__credits {
+			font-size: 1em;
+		}
+
 		&__img {
 			width: 70%;
 		}
