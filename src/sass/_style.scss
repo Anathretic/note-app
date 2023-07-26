@@ -214,7 +214,7 @@ body {
 	background-color: colors.$main-color;
 	border-radius: 8px;
 	box-shadow: 1px 1px 30px colors.$second-color;
-	overflow-y: scroll;
+	overflow-y: auto;
 	z-index: 11;
 
 	&__title {
@@ -250,6 +250,7 @@ body {
 		margin-top: 0.5em;
 		width: 90%;
 		max-height: 200px;
+		background-color: white;
 		font-family: 'Montserrat', sans-serif;
 		box-shadow: 1px 1px 5px black;
 		border: 1px solid transparent;
