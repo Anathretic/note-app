@@ -5,3 +5,10 @@
         opacity: 1;
     }
 }
+
+@keyframes show-data-info {
+	to {
+        top: 90px;
+		opacity: 1;
+	}
+}

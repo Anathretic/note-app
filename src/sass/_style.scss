@@ -125,7 +125,6 @@ body {
 		&--one {
 			margin-bottom: 5px;
 			border-radius: 0 8px 0 0;
-			pointer-events: none;
 		}
 
 		&--two {
@@ -141,6 +140,49 @@ body {
 			background-color: colors.$second-color;
 		}
 	}
+}
+
+.data-info-popup {
+	position: fixed;
+	top: -100px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 90%;
+	max-width: 435px;
+	height: 100px;
+	background-color: colors.$special-color;
+	border-radius: 8px;
+	box-shadow: 3px 3px 30px colors.$border-color;
+	animation: show-data-info 0.5s 0.5s forwards;
+	transition: opacity 0.5s, top 0.5s;
+	opacity: 0;
+	z-index: 5;
+
+	&__text,
+	&__btn {
+		position: absolute;
+	}
+
+	&__text {
+		width: 60%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 1.4em;
+		text-align: center;
+	}
+
+	&__btn {
+		right: 0.3em;
+		top: 0.3em;
+		padding: 0.5em;
+		font-size: 1.6em;
+		cursor: pointer;
+	}
+}
+
+.data-info-popup--inactive {
+	display: none;
 }
 
 .note-area {

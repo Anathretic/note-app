@@ -19,34 +19,6 @@
 
 <body>
 
-    <div class="popup-shadow">
-        <div class="popup">
-            <div class="popup__container">
-                <h2 class="popup__title">add note</h2>
-                <div class="popup__box">
-                    <label class="popup__label" for="category">- Choose category -</label>
-                    <select class="popup__select" id="category" onchange="selectCategory()">
-                        <option value="0" disabled selected>- select it -</option>
-                        <option value="1">Work</option>
-                        <option value="1">School</option>
-                        <option value="1">Home</option>
-                        <option value="1">Shop</option>
-                        <option value="1">Other</option>
-                    </select>
-                </div>
-                <div class="popup__box">
-                    <label class="popup__label" for="text">- Add text -</label>
-                    <textarea class="popup__txtarea" id="text" maxlength="300"
-                        placeholder="Write something.."></textarea>
-                </div>
-                <div class="popup__buttons">
-                    <button class="popup__button-save" disabled><i class="fas fa-save"></i> Save</button>
-                    <button class="popup__button-close"><i class="far fa-window-close"></i> Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <nav class="nav">
         <div class="nav__wrapper">
             <div class="nav__menu">
@@ -60,17 +32,49 @@
     </nav>
 
     <main>
+        <div class="data-info-popup">
+            <p class="data-info-popup__text">This web application uses local storage to store data.</p>
+            <div class="data-info-popup__btn"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <div class="popup-shadow">
+            <div class="popup">
+                <div class="popup__container">
+                    <h2 class="popup__title">add note</h2>
+                    <div class="popup__box">
+                        <label class="popup__label" for="category">- Choose category -</label>
+                        <select class="popup__select" id="category" onchange="selectCategory()">
+                            <option value="0" disabled selected>- select it -</option>
+                            <option value="1">Work</option>
+                            <option value="1">School</option>
+                            <option value="1">Home</option>
+                            <option value="1">Shop</option>
+                            <option value="1">Other</option>
+                        </select>
+                    </div>
+                    <div class="popup__box">
+                        <label class="popup__label" for="text">- Add text -</label>
+                        <textarea class="popup__txtarea" id="text" maxlength="300"
+                            placeholder="Write something.."></textarea>
+                    </div>
+                    <div class="popup__buttons">
+                        <button class="popup__button-save" disabled><i class="fas fa-save"></i> Save</button>
+                        <button class="popup__button-close"><i class="far fa-window-close"></i> Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a href="#">
             <div class="return__arrow">
                 <img class="return__arrow-icon" src="dist/img/arrow-up.svg" alt="">
             </div>
         </a>
         <div class="button-box">
-            <a href="/" class="button-box__item button-box__item--one"><i class="fa-solid fa-house"></i></a>
-            <a href="https://github.com/Anathretic/note-app" target="_blank" class="button-box__item button-box__item--two"><i
-                    class="fa-brands fa-square-github"></i></a>
-            <a href="https://www.linkedin.com/in/konrad-wojtylo" target="_blank" class="button-box__item button-box__item--three"><i
-                    class="fa-brands fa-linkedin"></i></a>
+            <a href="https://konrad-wojtylo.com" target="_blank" class="button-box__item button-box__item--one"><i
+                    class="fa-solid fa-house"></i></a>
+            <a href="https://github.com/Anathretic/note-app" target="_blank"
+                class="button-box__item button-box__item--two"><i class="fa-brands fa-square-github"></i></a>
+            <a href="https://www.linkedin.com/in/konrad-wojtylo" target="_blank"
+                class="button-box__item button-box__item--three"><i class="fa-brands fa-linkedin"></i></a>
         </div>
         <div class="wrapper">
             <ul class="note-area">
