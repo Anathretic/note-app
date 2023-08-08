@@ -14,6 +14,16 @@
 		}
 	}
 
+	.data-info-popup {
+		&__text {
+			font-size: 1.5em;
+		}
+
+		&__btn {
+			font-size: 1.8em;
+		}
+	}
+
 	.notecard {
 		margin: 30px 20px;
 		width: 300px;

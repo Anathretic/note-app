@@ -1,6 +1,8 @@
 let BODY
 let NAV_ADD_BTN
 let NAV_DELETE_ALL_BTN
+let DATA_INFO_POPUP
+let DATA_INFO_POPUP_BTN
 let NOTE_AREA
 let POPUP
 let POPUP_CONTAINER
@@ -22,6 +24,8 @@ const prepareDOMElements = () => {
 	BODY = document.querySelector('body')
 	NAV_ADD_BTN = document.querySelector('.nav__button-add')
 	NAV_DELETE_ALL_BTN = document.querySelector('.nav__button-deleteall')
+	DATA_INFO_POPUP = document.querySelector('.data-info-popup')
+	DATA_INFO_POPUP_BTN = document.querySelector('.data-info-popup__btn')
 	NOTE_AREA = document.querySelector('.note-area')
 	POPUP = document.querySelector('.popup-shadow')
 	POPUP_CONTAINER = document.querySelector('.popup')
@@ -39,12 +43,26 @@ const prepareDOMEvents = () => {
 	oldNotes()
 	window.addEventListener('scroll', showArrow)
 	document.addEventListener('keyup', e => escapeCheck(e))
+	DATA_INFO_POPUP_BTN.addEventListener('click', handleDataInfoPopup)
 	POPUP.addEventListener('keyup', checkBtn)
 	POPUP.addEventListener('click', checkBtn)
 	NAV_ADD_BTN.addEventListener('click', showPopup)
 	NAV_DELETE_ALL_BTN.addEventListener('click', deleteAllNotes)
 	POPUP_SAVE_BTN.addEventListener('click', createNote)
 	POPUP_CANCEL_BTN.addEventListener('click', closePopup)
+	showDataInfoPopup()
+}
+
+const showDataInfoPopup = () => {
+	const cookieItem = localStorage.getItem('cookie')
+	if (cookieItem) {
+		DATA_INFO_POPUP.classList.add('data-info-popup--inactive')
+	}
+}
+
+const handleDataInfoPopup = () => {
+	localStorage.setItem('cookie', 'true')
+	DATA_INFO_POPUP.classList.add('data-info-popup--inactive')
 }
 
 const showPopup = () => {
@@ -109,11 +127,12 @@ const oldNotes = () => {
 		let key = localStorage.key(i)
 		let value = JSON.parse(localStorage.getItem(key))
 
-		const oldNote = document.createElement('li')
-		oldNote.classList.add('notecard')
-		oldNote.setAttribute('id', value.id)
-		SELECTED_CATEGORY = value.category
-		oldNote.innerHTML = `
+		if (key !== 'cookie') {
+			const oldNote = document.createElement('li')
+			oldNote.classList.add('notecard')
+			oldNote.setAttribute('id', value.id)
+			SELECTED_CATEGORY = value.category
+			oldNote.innerHTML = `
 						<div class="notecard__header">
 							<h3 class="notecard__title">${SELECTED_CATEGORY}</h3>
 							<button class="notecard__icon" onclick="deleteNote(${value.id})">
@@ -123,8 +142,9 @@ const oldNotes = () => {
 						<div class="notecard__body">
 							${value.text}
 						</div>`
-		NOTE_AREA.appendChild(oldNote)
-		checkCategory(oldNote)
+			NOTE_AREA.appendChild(oldNote)
+			checkCategory(oldNote)
+		}
 	}
 }
 
